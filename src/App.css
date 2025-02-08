@@ -6,3 +6,66 @@
 .menu {
   color: blue;
 }
+
+body {
+  color: black;
+}
+
+.logo {
+  width:50px; /* Adjust this value to make the logo smaller */
+  height: auto; /* Keeps the aspect ratio intact */
+}
+
+.title {
+  font-family: "Elsie", serif;
+  font-weight: 400;
+  font-size:x-large;
+  font-style: normal;
+}
+
+.fancytext {
+  font-family: "Bonbon", serif;
+  font-weight: bold;
+  font-size:medium;
+  font-style: normal;
+  color: #d75050;
+}
+
+.bigtext {
+  font-family: "Elsie", serif;
+  font-weight: 400;
+  font-size:x-large;
+  font-style: normal;
+  color: #5f6565;
+}
+
+img {
+  border-radius: 10px; /* Adjust value to control roundness */
+}
+
+.itemtitle {
+  font-weight: bold;
+  font-size: medium;
+}
+
+.itemdesc {
+  font-size: small;
+}
+
+.itemprice {
+  font-size: small;
+  font-weight: bold;
+}
+
+.button {
+  background-color: #d75050;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-align: center;
+  display: inline-block;
+  font-size: 13px;
+  box-shadow: 0 3px 3px 0 grey;
+}
