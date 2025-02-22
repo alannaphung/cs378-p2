@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './App.css';
 import MenuItem from './components/MenuItem';
 
@@ -80,15 +81,31 @@ const menuItems = [
 
 
 function App() {
+  const [total, calcTotal] = useState(0);
+  const [cart, updateCart] = useState({})
+  const [resetKey, setResetKey] = useState(0);
+
   return (
     <div>
       <Title title="Japanese Menu" logo="sushiLogo.png"/>
       <Tagline motto="Sushi that serves" subtitle="we cooked"/>
-      <div>
+      <div key={resetKey}>
         {menuItems.map(({title, description, price, imageName}) =>
         (
-          <MenuItem title={title} desc={description} price={price} imgname={imageName} />
+          <MenuItem title={title} desc={description} price={price} imgname={imageName} subtotal={total} modTotal={calcTotal} cart={cart} updateCart={updateCart} />
         ))}
+        <div class="row p-3">
+          <div class="col-6"><span class="itemprice">{'Subtotal: $' + total.toFixed(2)}</span></div>
+          <div class="col-3"><button type="button" class="button" onClick={() => {
+            if (Object.keys(cart).length === 0) {
+              alert("Cart is empty!")
+            } else {
+              alert("Order placed!" + JSON.stringify(cart))
+            }
+          }}> Order </button></div>
+          <div class="col-3"><button type="button" class="button" onClick={() => {
+                             calcTotal(0); updateCart({}); setResetKey(resetKey + 1) }}> Clear All </button></div>
+        </div>
       </div>
     </div>
   );
